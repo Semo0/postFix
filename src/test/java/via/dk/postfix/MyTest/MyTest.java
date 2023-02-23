@@ -21,8 +21,6 @@ public class MyTest {
         stack.push(1);
         stack.push(2);
 
-
-
         Assertions.assertTrue(stack.getSize()==2);
     }
     @Test
