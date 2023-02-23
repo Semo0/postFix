@@ -20,6 +20,7 @@ public class MyTest {
     public void pushTowElementToTheStack(){
         stack.push(1);
         stack.push(2);
+        //Sghsdghsd
 
         Assertions.assertTrue(stack.getSize()==2);
     }
