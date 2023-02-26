@@ -66,7 +66,7 @@ public class MyTest {
         stack.push(23);
         stack.push(32);
         stack.lookUp();
-        Assertions.assertTrue(stack.lookUp().equals(32));
+        Assertions.assertTrue(stack.lookUp()==32);
     }
 
 
@@ -75,7 +75,7 @@ public class MyTest {
         stack.push(23);
         stack.push(32);
         stack.lookUp();
-        Assertions.assertFalse(stack.lookUp().equals(23));
+        Assertions.assertFalse(stack.lookUp()==23);
     }
     @Test
     public void popReturnLastElement(){
@@ -85,7 +85,7 @@ public class MyTest {
         try {
 
 
-            Assertions.assertTrue(stack.pop().equals(32));
+            Assertions.assertTrue(stack.pop()==32);
         }
         catch (Exception e){
             return;
@@ -98,7 +98,7 @@ public class MyTest {
 
         try {
             stack.pop();
-            Assertions.assertFalse(stack.lookUp().equals(32));
+            Assertions.assertFalse(stack.lookUp()==32);
 
 
 
