@@ -1,10 +1,14 @@
 package via.dk.postfix.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Operand extends Token {
 
     private int value;
 
-    public Operand(int value) {
+    @JsonCreator
+    public Operand(@JsonProperty("value") int value) {
         super(String.valueOf(value));
         this.value=value;
 

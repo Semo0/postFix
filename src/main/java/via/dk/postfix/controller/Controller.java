@@ -22,29 +22,29 @@ public class Controller {
 
     @RequestMapping(value = (""),method = RequestMethod.POST,produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseBody
-    public int evaluateExpression(@RequestBody String inpute) throws Exception {
-        ArrayList<Token> tokens = new ArrayList<>();
-
-        for (int i = 0; i < inpute.length(); i++) {
-
-            char x = inpute.charAt(i);
-            if (Character.isDigit(x)) {
-
-                int operand = Integer.parseInt(String.valueOf(x));
-                Operand operand1 = new Operand(operand);
-                System.out.println(operand1.getValue());
-                tokens.add(operand1);
-            }
-
-
-             else if (!Character.isDigit(x)){
-                Operator operator = new Operator(String.valueOf(x));
-                System.out.println(operator.getOperator());
-                tokens.add(operator);
-
-            }
-
-        }
+    public int evaluateExpression(@RequestBody ArrayList<Token> tokens) throws Exception {
+//        ArrayList<Token> tokens = new ArrayList<>();
+//
+//        for (int i = 0; i < inpute.length(); i++) {
+//
+//            char x = inpute.charAt(i);
+//            if (Character.isDigit(x)) {
+//
+//                int operand = Integer.parseInt(String.valueOf(x));
+//                Operand operand1 = new Operand(operand);
+//                System.out.println(operand1.getValue());
+//                tokens.add(operand1);
+//            }
+//
+//
+//             else if (!Character.isDigit(x)){
+//                Operator operator = new Operator(String.valueOf(x));
+//                System.out.println(operator.getOperator());
+//                tokens.add(operator);
+//
+//            }
+//
+//        }
         return postFix.getResult(tokens);
     }
 }

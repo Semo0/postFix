@@ -2,7 +2,6 @@ package via.dk.postfix.MyTest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
 import via.dk.postfix.stack.MyStack;
 
 public class MyTest {

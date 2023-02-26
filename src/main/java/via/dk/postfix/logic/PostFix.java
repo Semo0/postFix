@@ -1,13 +1,13 @@
 package via.dk.postfix.logic;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 import via.dk.postfix.model.Operand;
 import via.dk.postfix.model.Operator;
 import via.dk.postfix.model.Token;
 import via.dk.postfix.stack.MyStack;
 
 import java.util.ArrayList;
-@Repository
+
 public class PostFix {
 
     private MyStack stack = new MyStack();
