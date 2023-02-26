@@ -25,6 +25,10 @@ public class PostFixApplication {
 		list.add(operand2);
 		list.add(operator);
 
+		Token token= new Token("sf");
+		list.add(token);
+
+
 
 		MyStack stack= new MyStack();
 
