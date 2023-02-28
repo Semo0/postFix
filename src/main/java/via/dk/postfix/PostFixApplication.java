@@ -22,11 +22,8 @@ public class PostFixApplication {
 		Operand operand2= new Operand(3);
 		Operator operator= new Operator("+");
 		list.add(operand1);
-		list.add(operand2);
 		list.add(operator);
 
-		Token token= new Token("sf");
-		list.add(token);
 
 
 
@@ -35,7 +32,6 @@ public class PostFixApplication {
 		PostFix postFix= new PostFix(stack);
 
 		System.out.println(postFix.getResult(list));
-		//System.out.println(postFix.isInt("1"));
 
 
 	}

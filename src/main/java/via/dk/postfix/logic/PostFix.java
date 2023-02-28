@@ -8,15 +8,11 @@ import via.dk.postfix.stack.MyStack;
 
 import java.util.ArrayList;
 
+@Component
 public class PostFix {
 
-    private MyStack stack = new MyStack();
+    private MyStack stack;
 
-//    private ArrayList<Object> list;
-//
-//    public PostFix(ArrayList<Object> list) {
-//        this.list = list;
-//    }
 
 
     public PostFix(MyStack stack) {
@@ -27,7 +23,6 @@ public class PostFix {
 
         for (int i = 0; i < list.size(); i++) {
             var x = list.get(i);
-            System.out.println(x.getInput());
 
             if (x instanceof Operand) {
 
@@ -49,27 +44,23 @@ public class PostFix {
                         stack.push(z * y);
                         break;
                     case "/":
+                        if (y==0){
+                            throw new Exception("Cannot divide by zero");
+                        }
                         stack.push(z / y);
+
                         break;
                 }
             }
 
 
         }
+        if (stack.getSize()>1){
+            throw new Exception("Invalid input Expression");
+        }
 
         return stack.pop();
 
     }
 
-
-    public boolean isInt(String input) {
-        boolean isInt = false;
-        try {
-            Integer.parseInt(input);
-            isInt = true;
-        } catch (Exception e) {
-            return isInt = false;
-        }
-        return isInt;
-    }
 }
