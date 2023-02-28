@@ -22,7 +22,7 @@ public class Controller {
     @RequestMapping(value = (""), method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseBody
     public int evaluateExpression(@RequestBody ArrayList<Token> tokens)  {
-
+             int s;
         if (tokens==null || tokens.isEmpty()){
             throw new Exception("Empty input");
         }
@@ -30,7 +30,8 @@ public class Controller {
             return postFix.getResult(tokens);
         }
         catch (Exception e){
-            throw new IllegalArgumentException(e.getMessage());
+            throw new Exception(e.getMessage());
+
         }
 
     }
