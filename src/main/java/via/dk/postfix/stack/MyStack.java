@@ -3,7 +3,7 @@ package via.dk.postfix.stack;
 import org.springframework.stereotype.Component;
 
 import java.util.LinkedList;
-
+@Component
 public class MyStack {
 
     private LinkedList<Integer> list;
